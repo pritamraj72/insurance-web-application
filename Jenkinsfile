@@ -14,7 +14,7 @@ pipeline {
         stage('SCM Checkout') {
             steps {
                 // Get some code from a GitHub repository
-                git url: 'https://github.com/manju65char/star-agile-insurance-project.git'
+                git url: 'https://github.com/manju65char/insurance-web-application.git'
             }
         }
         stage('Maven Build') {
