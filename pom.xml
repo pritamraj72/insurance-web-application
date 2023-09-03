@@ -8,7 +8,7 @@
 		<version>2.7.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.project.staragile</groupId>
+	<groupId>com.project.manjuDOE</groupId>
 	<artifactId>insure-me</artifactId>
 	<version>1.0</version> 
 	<name>Insure-me</name>
