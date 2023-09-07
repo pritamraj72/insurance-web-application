@@ -17,10 +17,23 @@ pipeline {
                 git url: 'https://github.com/manju65char/insurance-web-application.git'
             }
         }
-        stage('Maven Build') {
+stage('Maven Build') {
             steps {
                 // Run Maven on a Unix agent.
                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
+            }
+        }
+stage('Test the code ') {
+            steps {
+                // testin the code using sonar server.
+                sh "mvn sonar:sonar"
+            }
+        }
+        
+        stage('deploying artifacts into nexus repo') {
+            steps {
+                // loading the artifacts into nexus server.
+                sh ""
             }
         }
         stage("Docker build") {
