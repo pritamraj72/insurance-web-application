@@ -27,7 +27,7 @@ stage('Test the code ') {
             steps {
                 // testin the code using sonar server.
                // sh "mvn sonar:sonar"
-                sh "echo "scanning the source code and generating the reports""
+                sh "echo 'scanning the source code and generating the reports' "
             }
         }
         
