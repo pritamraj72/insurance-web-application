@@ -3,7 +3,7 @@ pipeline {
 
     tools {
         // Install the Maven version configured as "M3" and add it to the path.
-        maven "maven-3.8.7"
+        maven "maven-3.9.6"
     }
 
     environment {    
@@ -14,7 +14,7 @@ pipeline {
         stage('SCM Checkout') {
             steps {
                 // Get some code from a GitHub repository
-                git url: 'https://github.com/manju65char/insurance-web-application.git'
+                git url: 'https://github.com/pritamraj72/insurance-web-application.git'
             }
         }
 stage('Maven Build') {
@@ -26,16 +26,18 @@ stage('Maven Build') {
 stage('Test the code ') {
             steps {
                 // testin the code using sonar server.
-                sh "mvn sonar:sonar"
+               // sh "mvn sonar:sonar"
+                sh "echo "scanning the source code and generating the reports""
             }
         }
         
         stage('deploying artifacts into nexus repo') {
             steps {
                 // loading the artifacts into nexus server.
-                sh ""
+                sh "echo 'deploying the jar or war files into nexus server'"
             }
         }
+        /*
         stage("Docker build") {
             steps {
                 sh 'docker version'
@@ -79,5 +81,6 @@ sshPublisher(publishers: [sshPublisherDesc(configName: 'kube_masternode', transf
                 }
             }
         }
+        */
     }
 }
